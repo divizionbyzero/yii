@@ -1,0 +1,25 @@
+.login-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.login, .signup {
+    background-color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: 'ubuntumedium';
+    color:#676767;
+
+}
+
+.login-form, .signup-form {
+    margin: 20px 30px;
+}
+
+.input-field {
+    border: 1px solid #979797;
+    margin:10px 0;
+    width: 250px;
+
+}

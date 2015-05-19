@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/fonts.css"/>
+    <link rel="stylesheet" href="style/reset.css"/>
+    <link rel="stylesheet" href="style/style.css"/>
+    <link rel="stylesheet" href="style/login.css"/>
+    <link rel="stylesheet" href="style/bootstrap.min.css"/>
+    <title></title>
+</head>
+<body>
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+<div class="wrap clearfix">
+    <div class="header">
+        <div class="supernavigation clearfix">
+            <a href ng-click="tab = 1">Войти</a>
+            <a href ng-click="tab = 2">Зарегистрироваться</a>
+        </div>
+
+        <div class="head-title"><a href="index.html"><h1 class="main-header-text">Кто вы такой и что вам здесь нужно?</h1></a>
+        <p>В чащах юга жил бы цитрус? Да, но фальшивый экземпляр!</p></div>
+        <div class="navigation clearfix">
+            <ul>
+                <li><a href="#">менюшечка</a></li>
+                <li><a href="#">моя</a></li>
+                <li><a href="#">хорошая</a></li>
+                <li><a href="#">я</a></li>
+                <li><a href="#">тебя</a></li>
+                <li><a href="#">вылечу</a></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="login-wrap">
+        <div class="login" ng-show="tab === 1">
+
+            <form action="" name="loginF" class="login-form">
+                <label class="clearfix">E-mail<input type="email" class="input-field clearfix" required ></label>
+                <label>Пароль<input type="password" class="input-field clearfix" required></label>
+                <input type="submit" class="clearfix" value="Войти">
+            </form>
+        </div>
+        <div class="signup" ng-show="tab === 2">
+
+            <form action="" name="signup" class="signup-form">
+                <label class="clearfix">E-mail<input type="email" class="input-field clearfix" required></label>
+                <label class="clearfix">Имя<input type="text" class="input-field clearfix" required></label>
+                <label  class="clearfix">Пароль<input type="password" class="input-field clearfix" required></label>
+                <label class="clearfix">Повторите пароль<input type="password" class="input-field clearfix" required></label>
+                <input type="submit" class="clearfix" value="Зарегистрироваться">
+            </form>
+        </div>
+    </div>
+
+    <div class="main clearfix" ng-hide="tab === 2">
+        <div class="sidebar"  ng-hide="tab === 1">
+            <div class="side-title">Господа, в чем дело?</div>
+            <div class="side-content">В целом пока не очень понятно.
+            <img src="img/cockroach.jpg" class="clearfix">
+            </div>
+        </div>
+        <div class="content"  ng-hide="tab === 1">
+            <div class="post clearfix">
+                <div class="post-header">
+                    <div class="post-title clearfix">
+                       <span>У Алеси нет хвостаУ Алеси нет хвоста</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <div class="post-content-small" ng-hide="tab === 3" ng-show="tab === 4"> Да, это правда. Хвоста у нее
+                        действительно нет, и, можно сказать, никогда и не было. Однако и без него она чувствует себя прекрасно.
+                        Может так быть, что это как раз-таки из-за отсутствия хвоста. А может быть и иначе - отсутствие хвоста удачно компенсируется наличием весьма выдающегося носа.
+                        </div>
+                            <a class="post-content-proceed" href ng-click="tab = 3" ng-hide="tab === 3">Читать далее</a>
+
+                        <div class="post-content-big" ng-show="tab === 3"> Да, это правда. Хвоста у нее
+                    действительно нет, и, можно сказать, никогда и не было. Однако и без него она чувствует себя прекрасно.
+                    Может так быть, что это как раз-таки из-за отсутствия хвоста. А может быть и иначе - отсутствие хвоста удачно компенсируется наличием весьма выдающегося носа.
+                    Да, это правда. Хвоста у нее
+                    действительно нет, и, можно сказать, никогда и не было. Однако и без него она чувствует себя прекрасно.
+                    Может так быть, что это как раз-таки из-за отсутствия хвоста. А может быть и иначе - отсутствие хвоста удачно компенсируется наличием весьма выдающегося носа.
+                    Да, это правда. Хвоста у нее
+                    действительно нет, и, можно сказать, никогда и не было. Однако и без него она чувствует себя прекрасно.
+                    Может так быть, что это как раз-таки из-за отсутствия хвоста. А может быть и иначе - отсутствие хвоста удачно компенсируется наличием весьма выдающегося носа.
+                    Да, это правда. Хвоста у нее
+                    действительно нет, и, можно сказать, никогда и не было. Однако и без него она чувствует себя прекрасно.
+                    Может так быть, что это как раз-таки из-за отсутствия хвоста. А может быть и иначе - отсутствие хвоста удачно компенсируется наличием весьма выдающегося носа.
+                            <a class="post-content-cut" href ng-click="tab = 4" ng-show="tab === 3">Свернуть</a>
+                    </div></div>
+                <div class="post-footer">
+                    <div class="post-tags">
+                        <a href>bla</a>, <a href>bla-bla</a>, <a href>собачки</a>
+                    </div>
+                    <div class="post-date">
+                    12-08-2001
+                </div>
+                </div>
+            </div>
+            <div class="post clearfix">
+                <div class="post-header">
+                    <div class="post-title clearfix">
+                        <span>У людей тоже нет хвоста</span>
+                    </div>
+                </div>
+                <div class="post-content">И ничего в этом плохого нет.</div>
+                <div class="post-date">
+                    12-09-1908
+                </div>
+            </div>
+            <div class="post clearfix"  ng-controller="StoreController as store">
+                <div class="post-header">
+                    <div class="post-title clearfix">
+                        <span>What?</span>
+                    </div>
+                </div>
+                <div class="post-content" >
+
+                </div>
+                <div class="post-date">
+                    12-09-1908
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-links">
+        <a href="http://vk.com" class="vk"><div class="icon"></div></a>
+        <a href="http://facebook.com" class="fb"><div class="icon"></div></a>
+        <a href="http://instagram.com" class="insta"><div class="icon"></div></a>
+    </div>
+</div>
+
+</body>
+</html>
