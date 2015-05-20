@@ -1,7 +1,7 @@
 .login-wrap {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 .login, .signup {
     background-color: white;

@@ -39,6 +39,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php echo Html::a('Edit', array('save', 'id' => $post->id), array('class' => 'btn btn-primary pull-right')); ?>
                     <?php echo Html::a('Delete', array('delete', 'id' => $post->id), array('class' => 'btn btn-primary pull-right')); ?>
                 </div>
+
+
             </div>
             <?php $tab += 2; ?>
         <?php endforeach; ?>
