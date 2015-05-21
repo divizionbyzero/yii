@@ -64,8 +64,12 @@ body {
     font-size: 1.2em;
     color:white;
 }
+
+.head-title {
+    /* margin-bottom: 40px; */
+}
 .main-header-text {
-    font-family: 'ubuntubold';
+    font-family: 'ubuntumedium';
 }
 
 .head-title>a, .head-title>a:hover {
@@ -80,11 +84,16 @@ body {
     letter-spacing: 0.06em;
 }
 
+.header-quote-author {
+    font-style: italic;
+    line-height: 2em;
+}
+
 .navigation {
     font-family: 'ubuntumedium';
     height: 40px;
     background-color: #fff;
-    margin: 20px 0 30px;
+    margin: 20px 0 20px;
     letter-spacing: 0.08em;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -186,7 +195,7 @@ body {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-   /* min-width: 37%;*/
+
 }
 
 .post-title, .post-date, .side-title {
@@ -225,21 +234,29 @@ body {
 }
 
 .post-date {
-
-    margin-right: 0;
-    margin-bottom: 0;
+    position: absolute;
+    bottom:0;
+    left:0;
+    display: inline-block;
     padding: 0.5% 2.5% 0.5% 3%;
-    border-top-left-radius: 3px;
-    float:right;
+
+    
+
+    border-top-right-radius: 3px;
+    
+
+    /* float:right; */
 
 }
 
-.post-content{
+.post-content, .post-content-small, .post-content-big{
     text-align: justify;
     margin: 30px 10px 15px;
     line-height: 1.3;
     color:#565656;
-    text-indent: 40px;
+    white-space: normal;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .footer {

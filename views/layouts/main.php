@@ -29,8 +29,8 @@ AppAsset::register($this);
                 <a href ng-click="tab = 1">Войти</a>
                 <a href ng-click="tab = 2">Зарегистрироваться</a>
             </div>
-            <div class="head-title"><a href="<?php echo yii\helpers\Url::toRoute('posts/index'); ?>"><h1 class="main-header-text">Кто вы такой и что вам здесь нужно?</h1></a>
-                <p>В чащах юга жил бы цитрус? Да, но фальшивый экземпляр!</p>
+            <div class="head-title"><a href="<?php echo yii\helpers\Url::toRoute('posts/index'); ?>"><h1 class="main-header-text">Скорее в номер! Марсиане атакуют людей!</h1></a>
+                <p class="header-quote-author">www.learn.javascript.ru</p>
             </div>
             <div class="navigation clearfix">
                 <?php
