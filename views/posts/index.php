@@ -5,6 +5,7 @@ use app\components\widgets;
 $this->title = 'Posts';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
     <?php if(Yii::$app->session->hasFlash('success')): ?>
             <div class="alert alert-danger" role="alert">
                 <?= Yii::$app->session->getFlash('success') ?>

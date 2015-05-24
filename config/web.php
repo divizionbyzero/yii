@@ -6,7 +6,16 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' => 'posts/index',
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['user', 'admin'], //здесь прописываем роли
+            //зададим куда будут сохраняться наши файлы конфигураций RBAC
+            'itemFile' => '@app/components/rbac/items.php',
+            'assignmentFile' => '@app/components/rbac/assignments.php',
+            'ruleFile' => '@app/components/rbac/rules.php'
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'yUQ3RpmrB5IkpT89RVRqfr1edH56sFLO',
@@ -16,7 +25,7 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+            'enableAutoLogin' => false,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

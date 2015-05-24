@@ -12,9 +12,35 @@ use yii\web\Controller;
 use app\models\Posts;
 use yii\web\HttpException;
 use yii\helpers\Url;
+use yii\filters\AccessControl;
 
 class PostsController extends Controller{
 
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'error'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'error'],
+                        'roles' => ['user'],
+                    ],
+                    [
+                        'allow' => true,
+                        'roles' => ['admin'],
+                    ],
+                ],
+            ],
+
+        ];
+    }
     public function actionIndex()
     {
         $models = Posts::find()->all();
@@ -54,7 +80,6 @@ class PostsController extends Controller{
 
         $parents = \app\models\Categories::find()->all();
         $select = array();
-        $select['NULL'] = 'None';
         foreach($parents as $parent) {
             $select[$parent->id] = $parent->name;
         }

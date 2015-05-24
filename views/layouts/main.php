@@ -4,11 +4,14 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-
+use app\assets\FooterAsset;
+use yii\widgets\ActiveForm;
+use app\components\widgets\LoginWidget;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 AppAsset::register($this);
+FooterAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -25,10 +28,12 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
     <div class="wrap clearfix">
         <div class="header">
+            <?php if (Yii::$app->user->isGuest) : ?>
             <div class="supernavigation clearfix">
                 <a href ng-click="tab = 1">Войти</a>
                 <a href ng-click="tab = 2">Зарегистрироваться</a>
             </div>
+            <?php endif; ?>
             <div class="head-title"><a href="<?php echo yii\helpers\Url::toRoute('posts/index'); ?>"><h1 class="main-header-text">Скорее в номер! Марсиане атакуют людей!</h1></a>
                 <p class="header-quote-author">www.learn.javascript.ru</p>
             </div>
@@ -44,12 +49,35 @@ AppAsset::register($this);
         </div>
         <div class="login-wrap">
             <div class="login" ng-show="tab === 1">
+                <?php /*LoginWidget::widget();*/ ?>
+                <?php
+                $login = new \app\models\LoginForm();
+                $form = ActiveForm::begin([
+                    'id' => 'login-form',
+                    'options' => ['class' => 'login-form'],
+                    'action' => yii\helpers\Url::toRoute('site/login'),
+                    'fieldConfig' => [
+                        'template' => "{label}{input}{error}",
+                        'labelOptions' => ['class' => 'col-lg-1 control-label'],
+                    ],
+                ]); ?>
 
-                <form action="" name="loginF" class="login-form">
-                    <label class="clearfix">E-mail<input type="email" class="input-field clearfix" required ></label>
-                    <label>Пароль<input type="password" class="input-field clearfix" required></label>
-                    <input type="submit" class="clearfix" value="Войти">
-                </form>
+                <?= $form->field($login, 'email')
+                    ->textInput(['class' => 'input-field clearfix'])
+                    ->label('Email',['class' =>'clearfix']) ?>
+
+                <?= $form->field($login, 'password')
+                    ->passwordInput(['class' => 'input-field clearfix'])
+                    ->label('Пароль',['class' =>'clearfix']) ?>
+
+                <?= $form->field($login, 'rememberMe', [
+                    'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
+                ])->checkbox() ?>
+
+                <?= Html::submitButton('Войти', ['class' => 'clearfix', 'name' => 'login-button']) ?>
+
+
+                <?php ActiveForm::end(); ?>
             </div>
             <div class="signup" ng-show="tab === 2">
 

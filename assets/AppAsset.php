@@ -15,6 +15,7 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
+    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
@@ -29,7 +30,7 @@ class AppAsset extends AssetBundle
         'js/angular.min.js',
         'js/app.js',
         'js/hideside.js',
-        'js/headers.js',
+        //'js/headers.js',
 
     ];
     public $depends = [

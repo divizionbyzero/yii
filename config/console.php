@@ -14,6 +14,14 @@ return [
         'gii' => 'yii\gii\Module',
     ],
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['user', 'admin'], //здесь прописываем роли
+            //зададим куда будут сохраняться наши файлы конфигураций RBAC
+            'itemFile' => '@app/components/rbac/items.php',
+            'assignmentFile' => '@app/components/rbac/assignments.php',
+            'ruleFile' => '@app/components/rbac/rules.php'
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
