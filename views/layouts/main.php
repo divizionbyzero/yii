@@ -4,12 +4,14 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\assets\FooterAsset;
 use yii\widgets\ActiveForm;
 use app\components\widgets\LoginWidget;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 AppAsset::register($this);
+FooterAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

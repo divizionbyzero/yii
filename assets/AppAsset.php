@@ -30,7 +30,7 @@ class AppAsset extends AssetBundle
         'js/angular.min.js',
         'js/app.js',
         'js/hideside.js',
-        'js/headers.js',
+        //'js/headers.js',
 
     ];
     public $depends = [
