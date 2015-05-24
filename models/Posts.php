@@ -11,6 +11,7 @@ class Posts extends ActiveRecord
 {
     //public $title;
 
+
     /**
      * @inheritdoc
      */
@@ -59,5 +60,10 @@ class Posts extends ActiveRecord
                 'value' => new Expression('UNIX_TIMESTAMP()'),
             )
         );
+    }
+
+    public function getCategory()
+    {
+        return $this->hasOne(Categories::className(), ['category' => 'id']);
     }
 }
