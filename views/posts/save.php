@@ -1,15 +1,14 @@
 <?php
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use dosamigos\ckeditor\CKEditor;
+
 $this->title = 'My Yii Application';
+
 ?>
 <div class="site-index">
 
     <div class="body-content">
-
-        <?php
-        use yii\helpers\Html;
-        use yii\widgets\ActiveForm;
-        use dosamigos\ckeditor\CKEditor;
-        ?>
 
 
 
@@ -27,6 +26,9 @@ $this->title = 'My Yii Application';
                 'options' => ['rows' => 6],
                 'preset' => 'full'
             ]) ?>
+        </div>
+        <div class="form-group">
+            <?php echo $form->field($model, 'tags')->textInput(array('class' => 'form-control')); ?>
         </div>
         <?php echo Html::submitButton('Submit', array('class' => 'btn btn-primary pull-right')); ?>
         <?php ActiveForm::end(); ?>
