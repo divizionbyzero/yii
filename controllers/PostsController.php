@@ -7,6 +7,7 @@
  */
 
 namespace app\controllers;
+use app\models\Tags;
 use Yii;
 use yii\web\Controller;
 use app\models\Posts;
@@ -41,6 +42,22 @@ class PostsController extends Controller{
 
         ];
     }
+    public function actionTags($name = NULL)
+    {
+        $tags = Tags::find()->where(['name'=>$name])->all();
+        $model = array();
+        if(count($tags)) {
+            foreach($tags as $tag) {
+                if (!empty($tag->posts)) {
+                    $model = array_merge($model,$tag->posts);
+                }
+            }
+
+        }
+        return $this->render('index', ['models' => $model]);
+
+    }
+
     public function actionIndex()
     {
         $models = Posts::find()->all();
@@ -59,14 +76,24 @@ class PostsController extends Controller{
 
     public function actionSave($id=NULL)
     {
-        if ($id == NULL)
+        if ($id == NULL) {
             $model = new Posts;
-        else
+           // $tag = new Tags;
+        }
+        else {
             $model = $this->loadModel($id);
+            //$model->tags = $model->getTagsString();
+        }
 
         if (isset($_POST['Posts']))
         {
             $model->load($_POST);
+            if (!empty($_POST['Posts']['tags'])) {
+                if (!empty($model->tags)) {
+                    $model->unlinkTags($model->tags);
+                }
+                $model->setTagsString($_POST['Posts']['tags']);
+            }
 
             if ($model->save())
             {
@@ -74,8 +101,9 @@ class PostsController extends Controller{
                 $link = Url::toRoute('/posts');
                 return $this->redirect($link);
             }
-            else
+            else {
                 Yii::$app->session->setFlash('error', 'Model could not be saved');
+            }
         }
 
         $parents = \app\models\Categories::find()->all();
@@ -83,7 +111,7 @@ class PostsController extends Controller{
         foreach($parents as $parent) {
             $select[$parent->id] = $parent->name;
         }
-
+        $model->tags = $model->getTagsString();
         return $this->render('save', array('model' => $model, 'select' => $select));
     }
 

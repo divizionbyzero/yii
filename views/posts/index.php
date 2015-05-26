@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use app\components\widgets;
-
+use yii\helpers\Url;
 $this->title = 'Posts';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -31,11 +31,15 @@ $this->params['breadcrumbs'][] = $this->title;
                         <a class="post-content-cut" href="" ng-click="tab = <?php echo $tab+1; ?>" ng-show="tab === <?php echo $tab; ?>">Свернуть</a>
                     </div></div>
                 <div class="post-footer">
-                    <div class="post-tags">
-                        <a href>bla</a>, <a href>bla-bla</a>, <a href>собачки</a>
-                    </div>
                     <div class="post-date">
                         <?php echo Yii::$app->formatter->asDatetime($post->created); ?>
+                    </div>
+                    <div class="post-tags">
+                        <?php foreach($post->tags as $tag) : ?>
+                            <span>
+                                <?php  echo HTMl::a( $tag->name, Url::toRoute(['posts/tags', 'name'=>$tag->name])); ?>
+                            </span>
+                        <?php endforeach; ?>
                     </div>
                     <?php echo Html::a('Edit', array('save', 'id' => $post->id), array('class' => 'btn btn-primary pull-right')); ?>
                     <?php echo Html::a('Delete', array('delete', 'id' => $post->id), array('class' => 'btn btn-primary pull-right')); ?>
