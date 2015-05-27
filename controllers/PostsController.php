@@ -60,7 +60,7 @@ class PostsController extends Controller{
 
     public function actionIndex()
     {
-        $models = Posts::find()->all();
+        $models = Posts::find()->orderBy(['created' => SORT_DESC])->all();
         return $this->render('index', ['models' => $models]);
     }
 
@@ -76,6 +76,26 @@ class PostsController extends Controller{
 
     public function actionSave($id=NULL)
     {
+        $kcfOptions = array_merge(\iutbay\yii2kcfinder\KCFinder::$kcfDefaultOptions, [
+            'uploadURL' => Yii::getAlias('@web').'/uploads',
+            'access' => [
+                'files' => [
+                    'upload' => true,
+                    'delete' => false,
+                    'copy' => false,
+                    'move' => false,
+                    'rename' => false,
+                ],
+                'dirs' => [
+                    'create' => true,
+                    'delete' => false,
+                    'rename' => false,
+                ],
+            ],
+        ]);
+
+// Set kcfinder session options
+        Yii::$app->session->set('KCFINDER', $kcfOptions);
         if ($id == NULL) {
             $model = new Posts;
            // $tag = new Tags;

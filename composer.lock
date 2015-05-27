@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9101026bc52b25ca7fa29a7fe8f8ddf7",
+    "hash": "eddd8c0e29257ab0ca7ab0efede050e5",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -377,6 +377,100 @@
                 "html"
             ],
             "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "iutbay/yii2-kcfinder",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iutbay/yii2-kcfinder.git",
+                "reference": "13e5ce1226915634905bb7488a9884f69293cf8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iutbay/yii2-kcfinder/zipball/13e5ce1226915634905bb7488a9884f69293cf8f",
+                "reference": "13e5ce1226915634905bb7488a9884f69293cf8f",
+                "shasum": ""
+            },
+            "require": {
+                "sunhater/kcfinder": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "iutbay\\yii2kcfinder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Kevin LEVRON",
+                    "email": "kevin.levron@gmail.com"
+                }
+            ],
+            "description": "KCFinder for Yii2",
+            "homepage": "https://github.com/iutbay/yii2-kcfinder",
+            "keywords": [
+                "extension",
+                "kcfinder",
+                "yii2"
+            ],
+            "time": "2014-11-28 10:23:47"
+        },
+        {
+            "name": "sunhater/kcfinder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sunhater/kcfinder.git",
+                "reference": "b645d2a81e647d63780c238b130593e32b4d95a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sunhater/kcfinder/zipball/b645d2a81e647d63780c238b130593e32b4d95a9",
+                "reference": "b645d2a81e647d63780c238b130593e32b4d95a9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "ext-curl": "*",
+                "ext-exif": "*",
+                "ext-fileinfo": "*",
+                "ext-gmagick": "*",
+                "ext-http": "*",
+                "ext-imagick": "*",
+                "ext-sockets": "*",
+                "ext-zip": "*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+",
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Tzonkov",
+                    "email": "sunhater@sunhater.com",
+                    "homepage": "http://sunhater.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "KCFinder web file manager",
+            "homepage": "http://kcfinder.sunhater.com",
+            "keywords": [
+                "explorer",
+                "file",
+                "file explorer",
+                "file manager",
+                "finder",
+                "kcfinder",
+                "manager"
+            ],
+            "time": "2014-09-27 18:47:34"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -970,9 +1064,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"

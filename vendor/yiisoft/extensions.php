@@ -66,4 +66,13 @@ return array (
       '@dosamigos/ckeditor' => $vendorDir . '/2amigos/yii2-ckeditor-widget/src',
     ),
   ),
+  'iutbay/yii2-kcfinder' => 
+  array (
+    'name' => 'iutbay/yii2-kcfinder',
+    'version' => '0.0.1.0',
+    'alias' => 
+    array (
+      '@iutbay/yii2kcfinder' => $vendorDir . '/iutbay/yii2-kcfinder',
+    ),
+  ),
 );

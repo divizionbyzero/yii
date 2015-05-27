@@ -1,9 +1,11 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 use dosamigos\ckeditor\CKEditor;
 
 $this->title = 'My Yii Application';
+
 
 ?>
 <div class="site-index">
@@ -22,10 +24,14 @@ $this->title = 'My Yii Application';
             <?php echo $form->field($model, 'category')->dropDownList($select, ['prompt' => 'None']); ?>
         </div>
         <div class="form-group">
-            <?= $form->field($model, 'body')->widget(CKEditor::className(), [
+            <?= $form->field($model, 'body')->widget(\app\components\widgets\CKEditor::className(), [
                 'options' => ['rows' => 6],
-                'preset' => 'full'
+                'preset' => 'full',
+                'clientOptions' => [
+                    'filebrowserUploadUrl' => Url::toRoute('/site/url')
+                ]
             ]) ?>
+
         </div>
         <div class="form-group">
             <?php echo $form->field($model, 'tags')->textInput(array('class' => 'form-control')); ?>

@@ -4,6 +4,10 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
+    config.disallowedContent = 'img{width,height};img[width,height]';
+    config.tag = { element : 'img', attributes : { 'class' : 'yourClassName' } };
+
+   // config.disallowedContent = '';
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
