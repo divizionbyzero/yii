@@ -1,3 +1,17 @@
+$white: white;
+$gray: #676767;
+$light: #93cf5f;
+
+@mixin change-border-radius($px) {
+  -moz-border-radius: $px; /* Firefox */
+  -webkit-border-radius: $px; /* Safari, Google Chrome */
+  -khtml-border-radius: $px; /* KHTML */
+  -o-border-radius: $px; /* Opera */
+  -ms-border-radius: $px; /* IE8 */
+  -icab-border-radius: $px; /* Icab */
+  border-radius: $px; /* CSS3 */
+}
+
 .clearfix {
   *zoom: 1;
   &:before, &:after {
@@ -8,7 +22,6 @@
     clear: both;
   }
 }
-
 
 body, html {
   height: 100%;
@@ -21,7 +34,7 @@ body {
 .wrap {
   height: auto;
   min-height: 100%;
-  width:90%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -32,28 +45,27 @@ body {
   a {
     margin-right: 15px;
     text-decoration: none;
-    color: #676767;
+    color: $gray;
     font-family: 'ubuntumedium';
     &:hover {
-      color:white;
+      color: $white;
       text-decoration: solid;
     }
   }
 }
 
-
 .head-title {
   text-align: center;
   font-size: 1.2em;
-  color:white;
+  color: $white;
   a, a:hover {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
   }
   p {
     font-family: 'ubuntulight';
     text-align: center;
-    margin-top:-15px;
+    margin-top: -15px;
     letter-spacing: 0.06em;
   }
 }
@@ -70,12 +82,10 @@ body {
 .navigation {
   font-family: 'ubuntumedium';
   height: 40px;
-  background-color: #fff;
+  background-color: $white;
   margin: 20px 0 20px;
   letter-spacing: 0.08em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  @include change-border-radius(3px);
   ul {
     text-align: center;
     display: table;
@@ -87,22 +97,21 @@ body {
     vertical-align: middle;
     height: 40px;
     &:last-child a {
-      border-right:none;
+      border-right: none;
     }
 
   }
   a {
     display: inline-block;
     text-decoration: none;
-    color: #676767;
+    color: $gray;
     padding: 0 15px;
-    border-right: 1px solid #676767;
+    border-right: 1px solid $gray;
     &:hover {
-      color:#93cf5f;
+      color: $light;
     }
   }
 }
-
 
 .main {
   padding-bottom: 150px;
@@ -113,14 +122,12 @@ body {
 }
 
 .sidebar {
-  background-color: white;
+  background-color: $white;
   width: 26%;
   float: right;
-  border: 3px solid #676767;
+  border: 3px solid $gray;
   position: relative;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  @include change-border-radius(3px);
 }
 
 .side-title {
@@ -134,9 +141,9 @@ body {
   text-align: justify;
   margin: 4% 4% 6% 6%;
   line-height: 1.3;
-  color:#565656;
+  color: #565656;
   img {
-    width:70%;
+    width: 70%;
     clear: both;
   }
 }
@@ -149,7 +156,7 @@ body {
 .post-content-proceed, .post-content-cut {
   display: flex;
   justify-content: flex-end;
-  color: #676767;
+  color: $gray;
   text-decoration: underline;
   font-family: 'ubuntumedium';
   &:hover {
@@ -161,21 +168,19 @@ body {
 .post {
   position: relative;
   width: 100%;
-  background-color: white;
+  background-color: $white;
   display: inline-block;
   margin: 0 10px 20px 0;
-  border: 3px solid #676767;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  border: 3px solid $gray;
+  @include change-border-radius(3px);
 
 }
 
 .post-title, .post-date, .side-title {
   position: relative;
-  background-color: #676767;
+  background-color: $gray;
   font-family: 'ubuntumedium';
-  color: white;
+  color: $white;
   letter-spacing: 0.03em;
   min-width: 12%;
 }
@@ -192,21 +197,20 @@ body {
   margin-left: 20px;
   font-size: 0.9em;
   a {
-    color: #676767;
+    color: $gray;
     text-decoration: underline;
     font-family: 'ubuntumedium';
     &:hover {
       text-decoration: none;
-      color: #676767;
+      color: $gray;
     }
   }
 }
 
-
 .post-date {
   position: absolute;
-  bottom:0;
-  left:0;
+  bottom: 0;
+  left: 0;
   display: block;
   width: 100%;
   padding: 0.5% 2.5% 0.5% 3%;
@@ -219,8 +223,9 @@ body {
   flex-flow: row nowrap;
   justify-content: flex-end;
 }
+
 .post-edit, .post-delete {
-  color: white;
+  color: $white;
   display: inline-block;
 }
 
@@ -228,11 +233,11 @@ body {
   margin-right: 10px;
 }
 
-.post-content, .post-content-small, .post-content-big{
+.post-content, .post-content-small, .post-content-big {
   text-align: justify;
   margin: 30px 10px 15px;
   line-height: 1.3;
-  color:#565656;
+  color: #565656;
   white-space: normal;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
@@ -253,7 +258,6 @@ body {
   justify-content: flex-end;
 
 }
-
 
 .icon {
   width: 50px;
@@ -286,15 +290,22 @@ body {
   }
 }
 
+.create-button {
+  background-color: $gray;
+  color: $white;
+  font-family: 'ubuntumedium';
+  padding: 3px 5px;
+}
+
 /*----------------------------------- */
-@media screen and (max-width: 590px){
+@media screen and (max-width: 590px) {
 
   .navigation a {
     padding: 0 10px;
     margin-top: 0;
   }
 
-  @media screen and (max-width: 530px){
+  @media screen and (max-width: 530px) {
 
     .navigation a {
       padding: 0 5px;
@@ -305,20 +316,20 @@ body {
       }
 
       .sidebar {
-        margin-bottom:7%;
+        margin-bottom: 7%;
         width: inherit;
       }
 
       .navigation ul, .navigation li {
         display: block;
-        width:inherit;
+        width: inherit;
       }
       .navigation {
         height: 240px;
       }
 
       .navigation li {
-        border-bottom: 1px dashed #676767;
+        border-bottom: 1px dashed $gray;
       }
 
       .navigation a {
@@ -328,12 +339,26 @@ body {
 
       }
 
-      .navigation>ul>li:last-child {
+      .navigation > ul > li:last-child {
         border-bottom: none;
       }
 
       .supernavigation {
+        font-family: 'ubuntumedium';
         text-align: center;
+        .username {
+          color: $white;
+        }
+        a.logout {
+          display: inline-block;
+          margin: 0 5px;
+          color: $gray;
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
       }
 
       .footer-links {
@@ -352,7 +377,7 @@ body {
       .main {
         padding-bottom: 90px;
       }
-      @media screen and (max-width: 320px){
+      @media screen and (max-width: 320px) {
 
         .footer {
           height: 50px;
@@ -394,7 +419,7 @@ body {
           padding-bottom: 50px;
 
         }
-        @media screen and (max-width: 230px){
+        @media screen and (max-width: 230px) {
 
           .supernavigation a {
             margin-right: 5px;
@@ -408,6 +433,5 @@ body {
       }
     }
   }
-
 
 }

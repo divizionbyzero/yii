@@ -22,5 +22,4 @@ function randomInteger(min, max) {
 }
 var num = randomInteger(0,headerPhrases.length);
 document.querySelector(".main-header-text").textContent = (headerPhrases[num].phrase);
-document.querySelector(".header-quote-author").textContent = (headerPhrases[num].name);
 

@@ -54,6 +54,6 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <?php $tab += 2; ?>
 <?php endforeach; ?>
-<?php echo Html::a('Create New Post', array('save'), array('class' => 'btn btn-primary pull-right')); ?>
+<?php echo Html::a('Create New Post', array('save'), array('class' => 'pull-right create-button')); ?>
 
 

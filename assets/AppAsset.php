@@ -22,7 +22,7 @@ public $css = [
 //'css/site.css',
 'css/fonts.css',
 'css/login.css',
-'css/style.css',
+//'css/style.css',
 'css/reset.css',
 'css/bootstrap.min.css',
 ];
