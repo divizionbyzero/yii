@@ -37,7 +37,7 @@ FooterAsset::register($this);
             <?php else : ?>
                 <div class="supernavigation clearfix">
                     <?php echo Yii::$app->user->getIdentity()->username;?>
-                    <a href="<?php echo Url::toRoute('posts/index');?>">Выйти</a>
+                    <a href="<?php echo Url::toRoute('site/logout');?>">Выйти</a>
                 </div>
             <?php endif; ?>
             <div class="head-title">
@@ -51,8 +51,6 @@ FooterAsset::register($this);
                 echo \yii\widgets\Menu::widget([
                 'items' => [
                     ['label' => 'Home', 'url' => ['posts/index']],
-                    ['label' => 'Войти', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-                    ['label' => 'Выйти', 'url' => ['site/logout'], 'visible' => !Yii::$app->user->isGuest],
                 ],
                 ]); ?>
             </div>
@@ -74,14 +72,14 @@ FooterAsset::register($this);
             </div>
         </div>
         <div class="main clearfix" ng-hide="tab === 2">
-
+            <?= Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
             <?php $this->beginContent('@app/views/layouts/sidebar.php'); ?>
             <?php $this->endContent(); ?>
 
             <div class="content clearfix"  ng-hide="tab === 1">
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]) ?>
+
                 <?= $content ?>
             </div>
         </div>

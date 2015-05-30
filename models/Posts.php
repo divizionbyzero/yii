@@ -132,7 +132,7 @@ class Posts extends ActiveRecord
         }
     }
 
-    public function afterSave($insert)
+    public function afterSave($insert,$changedAttributes)
     {
         $relatedRecords = $this->getRelatedRecords();
 

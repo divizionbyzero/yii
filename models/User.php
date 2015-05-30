@@ -62,7 +62,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         ];
     }
 
-    public function beforeSave() {
+    public function beforeSave($insert) {
 
         //$this->password = md5($this->password);
         $this->role = 0;

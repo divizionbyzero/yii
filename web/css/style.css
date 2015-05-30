@@ -1,443 +1,321 @@
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
 .clearfix {
-    /*overflow: auto;*/
-    *zoom: 1;
-}
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .clearfix:after {
+    clear: both; }
 
 body, html {
-    height: 100%;
-}
+  height: 100%; }
 
 body {
-    background-image: url("../img/bg.png");
-}
+  background-image: url("../img/bg.png"); }
 
 .wrap {
-    height: auto;
-    min-height: 100%;
-    width:90%;
-    margin: 0 auto;
-}
+  height: auto;
+  min-height: 100%;
+  width: 90%;
+  margin: 0 auto; }
 
 .supernavigation {
-    background-image: url("../img/bg.png");
-    margin: 10px 0;
-    text-align: right;
-}
-
-.supernavigation a {
+  background-image: url("../img/bg.png");
+  margin: 10px 0;
+  text-align: right; }
+  .supernavigation a {
     margin-right: 15px;
     text-decoration: none;
     color: #676767;
-    font-family: 'ubuntumedium';
-}
-
-.supernavigation a:hover {
-    color:white;
-    text-decoration: solid;
-}
+    font-family: 'ubuntumedium'; }
+    .supernavigation a:hover {
+      color: white;
+      text-decoration: solid; }
 
 .head-title {
-    text-align: center;
-    font-size: 1.2em;
-    color:white;
-}
-
-.head-title {
-    /* margin-bottom: 40px; */
-}
-.main-header-text {
-    font-family: 'ubuntumedium';
-}
-
-.head-title>a, .head-title>a:hover {
+  text-align: center;
+  font-size: 1.2em;
+  color: white; }
+  .head-title a, .head-title a:hover {
     text-decoration: none;
-    color:inherit;
-}
-
-.head-title p {
+    color: inherit; }
+  .head-title p {
     font-family: 'ubuntulight';
     text-align: center;
-    margin-top:-15px;
-    letter-spacing: 0.06em;
-}
+    margin-top: -15px;
+    letter-spacing: 0.06em; }
+
+.main-header-text {
+  font-family: 'ubuntumedium'; }
 
 .header-quote-author {
-    font-style: italic;
-    line-height: 2em;
-}
+  font-style: italic;
+  line-height: 2em; }
 
 .navigation {
-    font-family: 'ubuntumedium';
-    height: 40px;
-    background-color: #fff;
-    margin: 20px 0 20px;
-    letter-spacing: 0.08em;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
-.navigation ul {
+  font-family: 'ubuntumedium';
+  height: 40px;
+  background-color: #fff;
+  margin: 20px 0 20px;
+  letter-spacing: 0.08em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+  .navigation ul {
     text-align: center;
     display: table;
-    margin: 0 auto;
-}
-
-.navigation li {
+    margin: 0 auto; }
+  .navigation li {
     display: table-cell;
     vertical-align: middle;
-    height: 40px;
-
-}
-
-.navigation a {
+    height: 40px; }
+    .navigation li:last-child a {
+      border-right: none; }
+  .navigation a {
     display: inline-block;
     text-decoration: none;
     color: #676767;
     padding: 0 15px;
-    border-right: 1px solid #676767;
-}
-
-.navigation ul li:last-child a {
-    border-right:none;
-}
-.navigation a:hover {
-    color:#93cf5f;
-}
+    border-right: 1px solid #676767; }
+    .navigation a:hover {
+      color: #93cf5f; }
 
 .main {
-    padding-bottom: 150px;
-}
+  padding-bottom: 150px; }
 
 .content {
-    margin-right: 28%;
-}
+  margin-right: 28%; }
 
 .sidebar {
-    background-color: white;
-    width: 26%;
-    float: right;
-    border: 3px solid #676767;
-    position: relative;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
+  background-color: white;
+  width: 26%;
+  float: right;
+  border: 3px solid #676767;
+  position: relative;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
 
 .side-title {
-    padding: 1.3% 8% 2.6% 2%;
-    float: left;
-    width: 100%;
-}
+  padding: 1.3% 8% 2.6% 2%;
+  float: left;
+  width: 100%; }
 
 .side-content {
-    display: inline-block;
-    text-align: justify;
-    margin: 4% 4% 6% 6%;
-    line-height: 1.3;
-    color:#565656;
-}
-
-.side-content img {
-    width:70%;
-    clear: both;
-}
+  display: inline-block;
+  text-align: justify;
+  margin: 4% 4% 6% 6%;
+  line-height: 1.3;
+  color: #565656; }
+  .side-content img {
+    width: 70%;
+    clear: both; }
 
 .post-header {
-    /* position: absolute; */
-    display: inline-block;
-    width: 100%;
-}
+  display: inline-block;
+  width: 100%; }
 
 .post-content-proceed, .post-content-cut {
-    display: flex;
-    justify-content: flex-end;
-    color: #676767;
-    text-decoration: underline;
-    font-family: 'ubuntumedium';
-}
-
-.post-content-proceed:hover, .post-content-cut:hover {
+  display: flex;
+  justify-content: flex-end;
+  color: #676767;
+  text-decoration: underline;
+  font-family: 'ubuntumedium'; }
+  .post-content-proceed:hover, .post-content-cut:hover {
     text-decoration: none;
-    color: inherit;
-}
+    color: inherit; }
 
 .post {
-    position: relative;
-    width: 100%;
-    background-color: white;
-    display: inline-block;
-    margin: 0 10px 20px 0;
-    border: 3px solid #676767;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-
-}
+  position: relative;
+  width: 100%;
+  background-color: white;
+  display: inline-block;
+  margin: 0 10px 20px 0;
+  border: 3px solid #676767;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
 
 .post-title, .post-date, .side-title {
-    position: relative;
-    background-color: #676767;
-    font-family: 'ubuntumedium';
-    color: white;
-    letter-spacing: 0.03em;
-    min-width: 12%;
-}
+  position: relative;
+  background-color: #676767;
+  font-family: 'ubuntumedium';
+  color: white;
+  letter-spacing: 0.03em;
+  min-width: 12%; }
 
 .post-title {
-    padding: 0.5% 3% 1% 2%;
-    /* margin-bottom: 5px; */
-}
-
-.post-title span {
-    text-align: center;
-}
+  padding: 0.5% 3% 1% 2%; }
+  .post-title span {
+    text-align: center; }
 
 .post-tags {
-    display: inline-block;
-    margin-left: 20px;
-    font-size: 0.9em;
-}
-
-.post-tags>a {
+  display: block;
+  margin-left: 20px;
+  font-size: 0.9em; }
+  .post-tags a {
     color: #676767;
     text-decoration: underline;
-    font-family: 'ubuntumedium';
-}
-
-.post-tags>a:hover {
-    text-decoration: none;
-    color: #676767;
-}
+    font-family: 'ubuntumedium'; }
+    .post-tags a:hover {
+      text-decoration: none;
+      color: #676767; }
 
 .post-date {
-    position: absolute;
-    bottom:0;
-    left:0;
-    display: inline-block;
-    padding: 0.5% 2.5% 0.5% 3%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0.5% 2.5% 0.5% 3%;
+  border-top-right-radius: 3px; }
 
-    
+.wrap-but {
+  float: right;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end; }
 
-    border-top-right-radius: 3px;
-    
+.post-edit, .post-delete {
+  color: white;
+  display: inline-block; }
 
-    /* float:right; */
+.post-edit {
+  margin-right: 10px; }
 
-}
-
-.post-content, .post-content-small, .post-content-big{
-    text-align: justify;
-    margin: 30px 10px 15px;
-    line-height: 1.3;
-    color:#565656;
-    white-space: normal;
-    -ms-word-wrap: break-word;
-    word-wrap: break-word;
-}
+.post-content, .post-content-small, .post-content-big {
+  text-align: justify;
+  margin: 30px 10px 15px;
+  line-height: 1.3;
+  color: #565656;
+  white-space: normal;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word; }
 
 .footer {
-    position: relative;
-    height: 150px;
-    margin: -150px 50px 0 0;
-    clear: both;
-    text-align: center;
-}
+  position: relative;
+  height: 150px;
+  margin: -150px 50px 0 0;
+  clear: both;
+  text-align: center; }
 
 .footer-links {
-    margin: 5.4545% 1.5% 0 0;
-    float: right;
-    display: flex;
-    justify-content: flex-end;
-
-}
-
+  margin: 5.4545% 1.5% 0 0;
+  float: right;
+  display: flex;
+  justify-content: flex-end; }
 
 .icon {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-    background: url("../img/social.png");
-}
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  background: url("../img/social.png"); }
 
 .vk .icon {
-    background-position: 0 0;
-    cursor: pointer;
-}
-
-.vk .icon:hover {
-    background-position: -150px 0;
-}
+  background-position: 0 0;
+  cursor: pointer; }
+  .vk .icon:hover {
+    background-position: -150px 0; }
 
 .fb .icon {
-    background-position: -50px 0;
-    cursor: pointer;
-
-}
-
-.fb .icon:hover {
-    background-position: -200px 0;
-}
+  background-position: -50px 0;
+  cursor: pointer; }
+  .fb .icon:hover {
+    background-position: -200px 0; }
 
 .insta .icon {
-    background-position: -100px 0;
-    cursor: pointer;
-
-}
-
-.insta .icon:hover {
-    background-position: -250px 0;
-}
+  background-position: -100px 0;
+  cursor: pointer; }
+  .insta .icon:hover {
+    background-position: -250px 0; }
 
 /*----------------------------------- */
-@media screen and (max-width: 590px){
+@media screen and (max-width: 590px) {
+  .navigation a {
+    padding: 0 10px;
+    margin-top: 0; } }
+@media screen and (max-width: 590px) and (max-width: 530px) {
+  .navigation a {
+    padding: 0 5px; } }
+@media screen and (max-width: 590px) and (max-width: 530px) and (max-width: 480px) {
+  .content, .post {
+    margin: 3% 0; }
 
-    .navigation a {
-        padding: 0 10px;
-        margin-top: 0;
-    }
-}
+  .sidebar {
+    margin-bottom: 7%;
+    width: inherit; }
 
-@media screen and (max-width: 530px){
+  .navigation ul, .navigation li {
+    display: block;
+    width: inherit; }
 
-    .navigation a {
-        padding: 0 5px;
-        /* margin-top: 10px; */
+  .navigation {
+    height: 240px; }
 
-    }
-}
+  .navigation li {
+    border-bottom: 1px dashed #676767; }
 
-@media screen and (max-width: 480px) {
-    .content, .post {
-        margin: 3% 0;
-    }
+  .navigation a {
+    border-right: none;
+    padding: 10px;
+    /* margin-top: 10px; */ }
 
-    .sidebar {
-        margin-bottom:7%;
-        width: inherit;
-    }
+  .navigation > ul > li:last-child {
+    border-bottom: none; }
 
-    .navigation ul, .navigation li {
-        display: block;
-        width:inherit;
-    }
-    .navigation {
-        height: 240px;
-    }
+  .supernavigation {
+    text-align: center; }
 
-    .navigation li {
-        border-bottom: 1px dashed #676767;
-    }
+  .footer-links {
+    /* margin: 5.4545% auto; */
+    float: none;
+    /* display: flex; */
+    justify-content: center; }
 
-    .navigation a {
-        border-right: none;
-        padding: 10px;
-        /* margin-top: 10px; */
+  .footer {
+    height: 90px;
+    margin: -90px 50px 0 50px; }
 
-    }
+  .main {
+    padding-bottom: 90px; } }
+@media screen and (max-width: 590px) and (max-width: 530px) and (max-width: 480px) and (max-width: 320px) {
+  .footer {
+    height: 50px;
+    margin: -50px 30px 0 0; }
 
-    .navigation>ul>li:last-child {
-        border-bottom: none;
-    }
+  .icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    background: url("../img/social.png"); }
 
-    .supernavigation {
-        text-align: center;
-    }
+  .vk .icon {
+    background-position: -300px 0; }
 
-    .footer-links {
-        /* margin: 5.4545% auto; */
-        float: none;
-        /* display: flex; */
-        justify-content: center;
+  .vk .icon:hover {
+    background-position: -300px -25px; }
 
-    }
+  .fb .icon {
+    background-position: -325px 0; }
 
-    .footer {
-        height: 90px;
-        margin: -90px 50px 0 50px;
-    }
+  .fb .icon:hover {
+    background-position: -325px -25px; }
 
-    .main {
-        padding-bottom: 90px;
-    }
-}
+  .insta .icon {
+    background-position: -350px 0; }
 
+  .insta .icon:hover {
+    background-position: -350px -25px; }
 
-@media screen and (max-width: 320px){
+  .main {
+    padding-bottom: 50px; } }
+@media screen and (max-width: 590px) and (max-width: 530px) and (max-width: 480px) and (max-width: 320px) and (max-width: 230px) {
+  .supernavigation a {
+    margin-right: 5px;
+    font-size: 0.9em; }
 
-    .footer {
-        height: 50px;
-        margin: -50px 30px 0 0;
-    }
+  .footer {
+    margin: -50px 0 0 0; } }
 
-    .icon {
-        width: 25px;
-        height: 25px;
-        margin-left: 10px;
-        background: url("../img/social.png");
-    }
-
-    .vk .icon {
-        background-position: -300px 0;
-    }
-
-    .vk .icon:hover {
-        background-position: -300px -25px;
-    }
-
-    .fb .icon {
-        background-position: -325px 0;
-    }
-
-    .fb .icon:hover {
-        background-position: -325px -25px;
-    }
-
-    .insta .icon {
-        background-position: -350px 0;
-    }
-
-    .insta .icon:hover {
-        background-position: -350px -25px;
-    }
-
-    .main {
-        padding-bottom: 50px;
-
-    }
-}
-
-@media screen and (max-width: 230px){
-
-    .supernavigation a {
-        margin-right: 5px;
-        font-size: 0.9em;
-    }
-
-    .footer {
-        margin: -50px 0 0 0;
-    }
-}
+/*# sourceMappingURL=style.css.map */
